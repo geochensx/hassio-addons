@@ -292,7 +292,7 @@ class ScanProcessor():
             message += ',"身体类型":"' + str(bodyscale[lib.getBodyType()]) + '"'
             message += ',"代谢年龄":' + "{:.0f}".format(lib.getMetabolicAge())
 
-        message += ',"timestamp":"' + mitdatetime + '"'
+        message += ',"测量时间":"' + mitdatetime + '"'
         message += '}'
         try:
             sys.stdout.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Publishing data to topic {MQTT_PREFIX + '/' + user + '/weight'}: {message}\n")
