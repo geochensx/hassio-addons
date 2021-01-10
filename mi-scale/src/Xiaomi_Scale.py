@@ -192,7 +192,7 @@ OLD_MEASURE = ''
 
 def discovery():
     for MQTTUser in (USER1_NAME,USER2_NAME,USER3_NAME):
-        message = '{"name": "' + MQTTUser + ' Weight",'
+        message = '{"name": "' + MQTTUser + ' 体重",'
         message+= '"state_topic": "' + MQTT_PREFIX + '/' + MQTTUser + '/weight","value_template": "{{ value_json.重量 }}",'
         message+= '"json_attributes_topic": "' + MQTT_PREFIX + '/' + MQTTUser + '/weight","icon": "mdi:scale-bathroom"}'
         publish.single(
