@@ -289,7 +289,13 @@ class ScanProcessor():
             message += ',"骨量":' + "{:.2f}".format(lib.getBoneMass())
             message += ',"肌肉量":' + "{:.2f}".format(lib.getMuscleMass())
             message += ',"蛋白质":' + "{:.2f}".format(lib.getProteinPercentage())
-            message += ',"身体类型":"' + str(bodyscale[lib.getBodyType()]) + '"'
+            if str(bodyscale[lib.getBodyType()]) == "Overweight":
+              type = "超重"
+            elif str(bodyscale[lib.getBodyType()]) == "Obese":
+              type = "肥胖"
+            elif str(bodyscale[lib.getBodyType()]) == "Thick-set":
+              type = "壮实"
+            message += ',"身体类型":"' + type + '"'
             message += ',"代谢年龄":' + "{:.0f}".format(lib.getMetabolicAge())
 
         message += ',"测量时间":"' + mitdatetime + '"'
