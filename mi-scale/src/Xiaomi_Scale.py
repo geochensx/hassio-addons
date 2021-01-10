@@ -282,7 +282,7 @@ class ScanProcessor():
 
         if hasImpedance:
             lib = Xiaomi_Scale_Body_Metrics.bodyMetrics(calcweight, height, age, sex, int(miimpedance))
-            bodyscale = ['Obese', 'Overweight', 'Thick-set', 'Lack-exerscise', 'Balanced', 'Balanced-muscular', 'Skinny', 'Balanced-skinny', 'Skinny-muscular']
+            bodyscale = ['肥胖型', '超重型', '壮实型', '缺乏锻炼型', '平衡型', '平衡肌肉型', '偏瘦型', '平衡瘦型', '瘦肌肉型']
             message += ',"去脂体重":' + "{:.2f}".format(lib.getLBMCoefficient())
             message += ',"体脂":' + "{:.2f}".format(lib.getFatPercentage())
             message += ',"水分":' + "{:.2f}".format(lib.getWaterPercentage())
