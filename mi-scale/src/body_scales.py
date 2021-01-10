@@ -151,5 +151,5 @@ class bodyScales:
 
     # Return body type scale
     def getBodyTypeScale(self):
-        return ['肥胖型', '超重型', '壮实型', '缺乏锻炼型', '平衡型', '平衡肌肉型', '偏瘦型', '平衡瘦型', '瘦肌肉型']
+        return ['obese', 'overweight', 'thick-set', 'lack-exerscise', 'balanced', 'balanced-muscular', 'skinny', 'balanced-skinny', 'skinny-muscular']
 
