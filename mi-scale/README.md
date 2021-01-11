@@ -1,3 +1,12 @@
+# Fork 了大神的小米体脂秤addons，汉化一下。
+作者主页：https://github.com/lolouk44/hassio-addons   
+
+更多教程 ：https://sumju.net   
+电报    群 ：https://t.me/joinchat/J26zVFGMhWWB1sBTFvcjaA   
+电报频道 ：https://t.me/itcommander   
+Twitter     :   https://twitter.com/itcommander2   
+Facebook:   https://www.facebook.com/itcommander.itcommander.1   
+
 # Xiaomi Mi Scale Add On for Home Assistant
 
 Add-On for [HomeAssistant](https://www.home-assistant.io/) to read weight measurements from Xiaomi Body Scales.
