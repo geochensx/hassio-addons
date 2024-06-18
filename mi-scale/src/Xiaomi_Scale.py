@@ -231,7 +231,18 @@ class ScanProcessor():
                         if OLD_MEASURE != round(measured, 2):
                             self._publish(round(measured, 2), unit, str(datetime.now()), "", "")
                             OLD_MEASURE = round(measured, 2)
-
+                if data.startswith('f440'):
+                    sys.stdout.write("data:"+str(data))
+                    sys.stderr.write("sdid:"+str(sdid))
+                    isStabilized = (data[16:18] == "03")
+                    measured = int((data[18:20] + data[20:22]), 16) * 0.01
+                    unit = 'kg'
+                    measured = measured / 2
+                    miimpedance = str(int((data[22:24] + data[24:26]), 16))
+                    if unit and isStabilized:
+                        if OLD_MEASURE != round(measured, 2) + int(miimpedance):
+                            self._publish(round(measured, 2), unit, str(datetime.now()), hasImpedance, miimpedance)
+                            OLD_MEASURE = round(measured, 2) + int(miimpedance)
                 ### Xiaomi V2 Scale ###
                 if data.startswith('1b18') and sdid == 22:
                     data2 = bytes.fromhex(data[4:])
