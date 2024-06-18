@@ -262,6 +262,8 @@ class ScanProcessor():
                         if OLD_MEASURE != round(measured, 2) + int(miimpedance):
                             self._publish(round(measured, 2), unit, str(datetime.now()), hasImpedance, miimpedance)
                             OLD_MEASURE = round(measured, 2) + int(miimpedance)
+        else:
+            sys.stdout.write("\ndata:"+str(dev.addr))
 
 
     def _publish(self, weight, unit, mitdatetime, hasImpedance, miimpedance):
