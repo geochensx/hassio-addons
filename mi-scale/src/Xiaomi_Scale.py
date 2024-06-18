@@ -219,6 +219,7 @@ class ScanProcessor():
         global OLD_MEASURE
         if dev.addr == MISCALE_MAC.lower() and isNewDev:
             for (sdid, desc, data) in dev.getScanData():
+                sys.stdout.write("\ndata:"+str(data)+"=============sdid:"+str(sdid))
                 ### Xiaomi V1 Scale ###
                 if data.startswith('1d18') and sdid == 22:
                     measunit = data[4:6]
